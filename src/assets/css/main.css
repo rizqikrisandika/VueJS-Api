@@ -5,3 +5,12 @@
 .router-link-exact-active{
     font-weight: bold;
 }
+
+.btn-success{
+    background-color: #67FF63;
+    border: none;
+}
+
+.badge-success{
+    background-color: #67FF63;
+}
