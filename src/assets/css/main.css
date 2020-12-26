@@ -14,3 +14,12 @@
 .badge-success{
     background-color: #67FF63;
 }
+
+.card-product{
+    border-radius: 10px;
+}
+
+.card-img-top{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
