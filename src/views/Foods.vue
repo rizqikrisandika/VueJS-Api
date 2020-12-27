@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navbar/>
     <div class="container">
       <div class="row mt-5">
         <div class="col-12 col-sm-12 col-md-8 col-lg-8">
@@ -39,17 +40,19 @@
 </template>
 
 <script>
+import Navbar from "@/components/Navbar.vue";
 import ProductCard from "@/components/CardProduct.vue";
 import axios from "axios";
 
 export default {
   name: "Foods",
   components: {
+    Navbar,
     ProductCard,
   },
   data() {
     return {
-      products: [],
+      products: {},
       search: '',
     };
   },
