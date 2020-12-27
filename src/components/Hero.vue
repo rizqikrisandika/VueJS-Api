@@ -8,7 +8,7 @@
             in Your Gadget
           </h2>
           <p>Ayo segera pilih dan pesan makanan favorit Anda</p>
-          <button class="btn btn-success"><b-icon-arrow-right></b-icon-arrow-right> Pesan</button>
+          <router-link class="btn btn-success" to="/foods"><b-icon-arrow-right></b-icon-arrow-right> Pesan</router-link>
         </div>
       </div>
     </div>
