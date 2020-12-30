@@ -2,18 +2,29 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.navbar{
+    min-height: 100px;
+}
+
 .router-link-exact-active{
     font-weight: bold;
 }
 
 .btn-success{
-    background-color: #67FF63;
+    background-color: #F9974C;
     border: none;
 }
 
-.badge-success{
-    background-color: #67FF63;
+.btn-success:hover{
+    background-color: #F9974C;
+    border: none;
+    opacity: 0.7;
 }
+
+.badge-success{
+    background-color: #F9974C;
+}
+
 
 .card-product{
     border-radius: 10px;
@@ -22,6 +33,13 @@
 .card-img-top{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    width: 100%;
+    height: 30vh;
+}
+
+.card-product:hover{
+    transition: 0.3s;
+    transform: scale(1.02);
 }
 
 .img-fluid{

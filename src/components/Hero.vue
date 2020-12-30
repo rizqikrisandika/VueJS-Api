@@ -4,16 +4,16 @@
       <div class="d-flex h-100">
         <div class="justify-content-center align-self-center">
           <h2>
-            <strong>Delicious Food Menu,</strong><br />
-            in Your Gadget
+            <strong>MakanYuk!!! ...</strong><br />
+            Banyak Menu Murah & Enak
           </h2>
-          <p>Ayo segera pilih dan pesan makanan favorit Anda</p>
-          <router-link class="btn btn-success" to="/foods"><b-icon-arrow-right></b-icon-arrow-right> Pesan</router-link>
+          <p>Ayo segara dipesan menu kesukaan anda</p>
+          <router-link class="btn btn-success" to="/foods">Pesan</router-link>
         </div>
       </div>
     </div>
     <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-      <img src="../assets/images/hero.png" width="100%" alt="" />
+      <img src="../assets/images/banner.svg" width="100%" alt="" />
     </div>
   </div>
 </template>

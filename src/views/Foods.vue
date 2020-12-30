@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row mt-5">
         <div class="col-12 col-sm-12 col-md-8 col-lg-8">
-          <h2>Daftar <strong>Makanan</strong></h2>
+          <h2>Daftar <strong>Menu</strong></h2>
         </div>
         <div class="col-12 col-sm-12 col-md-4 col-lg-4">
           <div class="input-group mb-3">

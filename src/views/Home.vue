@@ -7,7 +7,7 @@
     <div class="container">
       <div class="row mt-4">
         <div class="col">
-          <h2>Best <strong>Foods</strong></h2>
+          <h2><strong>Menu</strong> Terfavorit</h2>
         </div>
         <div class="col">
           <router-link to="/foods" class="btn btn-success float-right"
