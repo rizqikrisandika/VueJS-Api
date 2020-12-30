@@ -25,8 +25,6 @@
               v-model="pesan.jumlah_pemesanan"
               type="number"
               class="form-control"
-              value="1"
-              min="1"
             />
           </div>
           <div class="form-group">

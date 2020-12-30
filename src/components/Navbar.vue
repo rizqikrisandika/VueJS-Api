@@ -1,39 +1,35 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-white">
-    <div class="container">
-     <router-link class="navbar-brand" to="#">Kuliner</router-link>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <div>
+    <b-navbar toggleable="lg" type="light">
+      <div class="container">
+        <b-navbar-brand href="#">Kulineran</b-navbar-brand>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <router-link class="nav-link" to="/">Home</router-link>
-          </li>
-          <li class="nav-item active">
-            <router-link class="nav-link" to="/foods">Foods</router-link>
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <router-link class="nav-link" to="/keranjang">Keranjang
-            <b-icon-bag></b-icon-bag>
-            <span class="badge badge-success ml-2">{{ updateKeranjang ? updateKeranjang.length: jumlah_pesanan.length }}</span>
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+        <b-collapse id="nav-collapse" is-nav>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <router-link class="nav-link" to="/">Home</router-link>
+            </li>
+            <li class="nav-item active">
+              <router-link class="nav-link" to="/foods">Foods</router-link>
+            </li>
+          </ul>
+
+          <!-- Right aligned nav items -->
+          <b-navbar-nav class="ml-auto">
+            <router-link class="nav-link" to="/keranjang"
+              >Keranjang
+              <b-icon-bag></b-icon-bag>
+              <span class="badge badge-success ml-2">{{
+                updateKeranjang ? updateKeranjang.length : jumlah_pesanan.length
+              }}</span>
             </router-link>
-          </li>
-        </ul>
+          </b-navbar-nav>
+        </b-collapse>
       </div>
-    </div>
-  </nav>
+    </b-navbar>
+  </div>
 </template>
 
 <script>
@@ -44,20 +40,20 @@ export default {
   data() {
     return {
       jumlah_pesanan: [],
-    }
+    };
   },
-  props: ['updateKeranjang'],
+  props: ["updateKeranjang"],
   methods: {
     setJumlah(data) {
-      this.jumlah_pesanan = data
-    }
+      this.jumlah_pesanan = data;
+    },
   },
   mounted() {
-     axios
+    axios
       .get("http://localhost:3000/keranjangs")
       .then((response) => this.setJumlah(response.data))
       .catch((error) => console.log(error));
-  }
+  },
 };
 </script>
 

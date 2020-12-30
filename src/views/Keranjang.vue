@@ -51,6 +51,28 @@
           </tr>
         </tbody>
       </table>
+
+      <div class="row justify-content-end">
+        <div class="col-md-4">
+          <form class="mt-4" v-on:submit.prevent>
+            <div class="form-group">
+              <label for="nama">Nama : </label>
+              <input v-model="pesan.nama" type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="noMeja">Nomer Meja : </label>
+              <input v-model="pesan.noMeja" type="text" class="form-control" />
+            </div>
+            <button
+              type="submit"
+              class="btn btn-success float-right"
+              @click="checkout"
+            >
+              <b-icon-cart></b-icon-cart> Pesan
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -67,6 +89,7 @@ export default {
   data() {
     return {
       keranjangs: [],
+      pesan: {},
     };
   },
   methods: {
@@ -89,6 +112,33 @@ export default {
             .catch((error) => console.log(error));
         })
         .catch((error) => console.log(error));
+    },
+    checkout(){
+      if(this.pesan.name && this.pesan.noMeja){
+         this.pesan.keranjangs = this.keranjangs;
+         axios
+          .post("http://localhost:3000/pesanans", this.pesan)
+          .then(() => {
+            this.$router.push({
+                path: "/pesanan-sukses"
+            })
+            this.$toast.success("Sukses Di Pesan", {
+              type: "success",
+              position: "top-right",
+              duration: 3000,
+              dismissible: true,
+            });
+          })
+          .catch((error) => console.log(error));
+
+      }else{
+        this.$toast.error("Nama dan Nomor Meja Harus Di Isi", {
+            type: "error",
+            position: "top-right",
+            duration: 3000,
+            dismissible: true,
+          });
+      }
     },
   },
   mounted() {
